@@ -5,6 +5,21 @@ body {
     background-color: var(--background-color);
     color: var(--text-color);
     transition: background-color 0.3s ease, color 0.3s ease;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+}
+
+header {
+    background-color: #1e88e5;
+    /* Change this to your desired color */
+    color: white;
+    /* Text color for better contrast */
+    padding: 10px 0;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 :root {
@@ -23,12 +38,18 @@ body {
     --btn-hover: #0056b3;
 }
 
-header, footer {
+footer {
     text-align: center;
-    margin: 2rem 0;
+    background-color: #1e88e5;
+    /* Change this to your desired color */
+    color: white;
+    /* Text color for better contrast */
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-h1, h2 {
+h2 {
     color: var(--text-color);
 }
 
@@ -49,7 +70,8 @@ p {
     padding: 1rem;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    flex: 1 1 calc(48% - 1rem); /* Two cards per row */
+    flex: 1 1 calc(48% - 1rem);
+    /* Two cards per row */
     text-align: left;
     max-width: 48%;
 }
@@ -57,10 +79,13 @@ p {
 /* Button Styling */
 .btn {
     display: inline-block;
-    padding: 8px 16px; /* Reduced padding */
-    font-size: 14px; /* Smaller font size */
+    padding: 8px 16px;
+    /* Reduced padding */
+    font-size: 14px;
+    /* Smaller font size */
     text-align: center;
-    margin: 5px; /* Add spacing between buttons */
+    margin: 5px;
+    /* Add spacing between buttons */
     border-radius: 5px;
     text-decoration: none;
     color: #fff;
@@ -76,31 +101,51 @@ p {
 /* Mobile View Adjustments */
 @media (max-width: 768px) {
     .btn {
-        width: 100%; /* Full width for better alignment */
-        margin: 8px 0; /* Add vertical spacing */
-        font-size: 12px; /* Slightly smaller font for mobile */
+        width: 100%;
+        /* Full width for better alignment */
+        margin: 8px 0;
+        /* Add vertical spacing */
+        font-size: 12px;
+        /* Slightly smaller font for mobile */
     }
 
-    #software li strong {
-        text-align: center; /* Center the title */
+    li strong {
+        text-align: center;
+        /* Center the title */
         margin-bottom: 10px;
     }
 
-    #software li p {
-        text-align: center; /* Center the description */
+    li p {
+        text-align: center;
+        /* Center the description */
         margin-bottom: 10px;
     }
 
-    #software .btn {
+    .btn {
         display: block;
-        width: calc(100% - 40px); /* Ensure buttons fit inside the card */
-        max-width: 300px; /* Set a max-width to keep buttons from becoming too large */
-        margin: 8px auto; /* Add space and center-align */
+        width: calc(100% - 40px);
+        /* Ensure buttons fit inside the card */
+        max-width: 300px;
+        /* Set a max-width to keep buttons from becoming too large */
+        margin: 8px auto;
+        /* Add space and center-align */
         text-align: center;
     }
 
-    #software {
-        padding: 0 10px; /* Add padding to ensure content doesn't touch screen edges */
+    .flex-container {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        /* Keeps space between cards */
+        justify-content: space-between;
+        width: 100%;
+        /* Full width */
+        max-width: 1200px;
+        /* Optional: Limit max width for better readability on larger screens */
+        margin: 0 auto;
+        /* Center content */
+        padding: 0 20px;
+        /* Add space on both sides */
     }
 }
 
@@ -110,7 +155,7 @@ p {
     align-items: center;
     justify-content: flex-end;
     position: absolute;
-    top: 10px;
+    top: 20px;
     right: 20px;
     gap: 0.5rem;
     font-size: 1rem;
@@ -127,15 +172,17 @@ p {
     color: var(--icon-color, white);
     transition: color 0.3s ease-in-out;
     outline: none;
-    
+
 }
 
 .theme-icon .moon-icon::before {
-    content: "🌙"; /* Moon icon for dark mode */
+    content: "🌙";
+    /* Moon icon for dark mode */
 }
 
 .theme-icon .sun-icon::before {
-    content: "☀️"; /* Sun icon for light mode */
+    content: "☀️";
+    /* Sun icon for light mode */
 }
 
 #theme-label {
@@ -146,7 +193,7 @@ p {
 
 /* Light Theme */
 [data-theme="light"] {
-    --background-color: #f2f2f2;
+    --background-color: #dfdfdf;
     --text-color: #333333;
     --icon-color: #333333;
 }
@@ -158,8 +205,26 @@ p {
     --icon-color: #ffffff;
 }
 
-body {
-    background-color: var(--background-color);
-    color: var(--text-color);
-    transition: background-color 0.3s ease, color 0.3s ease;
+
+#socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    /* Space between icons */
+    margin-top: 20px;
+}
+
+.social-icon {
+    width: 40px;
+    /* Set icon size */
+    height: 40px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+    /* Slight zoom on hover */
+    opacity: 0.8;
+    /* Reduce opacity on hover for effect */
 }
